@@ -21,7 +21,7 @@ class SmsCreditController(http.Controller):
         except ZeroDivisionError:
             return {"status": "error", "message": "Total credit must be > 0"}
 
-        product = request.env.ref('your_module.product_sms_credit')  # ← ชื่อโมดูลของคุณ
+        product = request.env.ref('sms_credit_api.product_sms_credit')
         lot = request.env['stock.production.lot'].sudo().create({
             'name': lot_name or f'SMS-{date.today().isoformat()}',
             'product_id': product.id,

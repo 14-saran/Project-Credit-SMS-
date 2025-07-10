@@ -6,6 +6,6 @@ class CreditUsage(models.Model):
 
     partner_id = fields.Many2one('res.partner')
     usage_datetime = fields.Datetime(default=fields.Datetime.now)
-    credit_used = fields.Integer()
+    used_credit = fields.Integer()
     usage_type = fields.Selection([('sms', 'SMS'), ('tracking', 'SMS + Tracking')])
     revenue_recognized = fields.Boolean(default=False)
