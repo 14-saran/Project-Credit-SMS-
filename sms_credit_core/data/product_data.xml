@@ -1,0 +1,25 @@
+<odoo>
+  <data noupdate="0">
+    <!-- Product Template for SMS Credit -->
+    <record id="product_sms_credit_template" model="product.template">
+      <field name="name">SMS Credit</field>
+      <field name="type">consu</field>
+      <field name="tracking">lot</field>
+      <field name="list_price">1.00</field>
+      <field name="standard_price">0.00</field>
+      <field name="categ_id" ref="product.product_category_all"/>
+      <field name="uom_id" ref="uom.product_uom_unit"/>
+      <field name="uom_po_id" ref="uom.product_uom_unit"/>
+      <field name="sale_ok">1</field>
+      <field name="purchase_ok">0</field>
+
+    </record>
+
+    <!-- Create variant (product.product) from template -->
+    <record id="product_sms_credit" model="product.product">
+      <field name="product_tmpl_id" ref="product_sms_credit_template"/>
+    </record>
+  </data>
+</odoo>
+
+

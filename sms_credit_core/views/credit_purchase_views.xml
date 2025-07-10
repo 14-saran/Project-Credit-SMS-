@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+  <data>
+
+     <record id="view_credit_purchase_tree" model="ir.ui.view">
+      <field name="name">credit.purchase.tree</field>
+      <field name="model">credit.purchase</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="partner_id"/>
+          <field name="lot_id"/>
+          <field name="total_credit"/>
+          <field name="used_credit"/>
+          <field name="remaining_credit"/>
+          <field name="expiry_date"/>
+          <field name="is_expired"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_credit_purchase_form" model="ir.ui.view">
+      <field name="name">credit.purchase.form</field>
+      <field name="model">credit.purchase</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="partner_id"/>
+              <field name="lot_id"/>
+              <field name="total_credit"/>
+              <field name="used_credit"/>
+              <field name="remaining_credit"/>
+              <field name="expiry_date"/>
+              <field name="is_expired"/>
+              <field name="state"/>
+              <field name="price"/>
+              <field name="revenue_recognized"/>
+              <field name="journal_entry_id"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_credit_purchase" model="ir.actions.act_window">
+      <field name="name">Customer Credit</field>
+      <field name="res_model">credit.purchase</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_credit_purchase_root" name="SMS Credit" sequence="10"/>
+    <menuitem id="menu_credit_purchase" name="Credit Purchases" parent="menu_credit_purchase_root" action="action_credit_purchase"/>
+
+      </data>
+</odoo>
